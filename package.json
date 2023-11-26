@@ -1,0 +1,30 @@
+{
+	"name": "@donutteam/cron-job-manager",
+	"version": "1.0.0",
+	"description": "A class for managing cron jobs.",
+	"main": "./lib/index.js",
+	"scripts": {
+		"build": "npx rimraf lib && npx tsc",
+		"prepublishOnly": "npm run build"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/donutteam/npm-cron-job-manager.git"
+	},
+	"keywords": [
+		"cron",
+		"cron-job",
+		"cron-jobs"
+	],
+	"author": "Donut Team",
+	"license": "MIT",
+	"type": "module",
+	"dependencies": {
+		"@types/node-cron": "^3.0.11",
+		"node-cron": "^3.0.3"
+	},
+	"devDependencies": {
+		"rimraf": "^5.0.5",
+		"typescript": "^5.2.2"
+	}
+}
