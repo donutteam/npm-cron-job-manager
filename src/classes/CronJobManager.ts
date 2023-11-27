@@ -30,10 +30,10 @@ export interface ScheduledCronJob extends CronJob
 export class CronJobManager
 {
 	/** All registered cron jobs. */
-	static scheduledCronJobs : ScheduledCronJob[] = [];
+	scheduledCronJobs : ScheduledCronJob[] = [];
 
 	/** Executes all registered run-at-startup cron jobs. */
-	static executeAll()
+	executeAll()
 	{
 		for (const cronJob of this.scheduledCronJobs.filter(cronJob => cronJob.runAtStartup))
 		{
@@ -42,7 +42,7 @@ export class CronJobManager
 	}
 
 	/** Registers the given cron job. */
-	static register(cronJob : CronJob) : ScheduledCronJob
+	register(cronJob : CronJob) : ScheduledCronJob
 	{
 		console.log("[CronJobManager] Registered cron job: " + cronJob.title);
 
@@ -68,7 +68,7 @@ export class CronJobManager
 		return scheduledCronJob;
 	}
 
-	static stopAll()
+	stopAll()
 	{
 		for (const cronJob of this.scheduledCronJobs)
 		{
