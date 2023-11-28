@@ -23,6 +23,8 @@ export interface ScheduledCronJob extends CronJob
 {
 	scheduledTask : cron.ScheduledTask | null;
 
+	error : (message : string) => void;
+
 	log : (message : string) => void;
 }
 
@@ -51,6 +53,11 @@ export class CronJobManager
 				...cronJob,
 
 				scheduledTask: null,
+
+				error: (message : string) =>
+				{
+					console.error("[CronJobManager] [" + cronJob.title + "] " + message);
+				},
 
 				log: (message : string) =>
 				{
